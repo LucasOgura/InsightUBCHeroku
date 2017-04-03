@@ -1,0 +1,81 @@
+//Query for course departments
+{
+            "WHERE":{
+            "AND": [
+              ]
+            },
+            "OPTIONS":{
+                "COLUMNS":[
+                    "courses_dept"
+                ],
+                "ORDER":"courses_dept",
+                "FORM":"TABLE"
+            },
+            "TRANSFORMATIONS": {
+                "GROUP": ["courses_dept"],
+                "APPLY": []
+            }
+        }
+//scheduler
+{
+                       "WHERE":{
+                                           "AND":[
+
+
+                                               {
+                                                   "IS":{
+                                                        "courses_dept":
+                                                        }
+
+                                               },
+                                               {
+                                                   "IS":{
+                                                       "courses_year": 2014
+                                                   }
+                                               }
+                                           ]
+                                       },,
+                       "OPTIONS":{
+                           "COLUMNS":[
+                               "courses_dept"
+                               "courses_id"
+                           ],
+                           "FORM":"TABLE"
+                       },
+                   }
+
+
+//Skeleton Query for Sections:
+{
+            "WHERE":{
+            "AND":
+                whereArray;
+
+            },
+            "OPTIONS":{
+                "COLUMNS":[
+                    "courses_dept",
+                    "courses_avg",
+                    "courses_id",
+                    "courses_instructor",
+                    "courses_title",
+                    "courses_uuid",
+                    "courses_size"
+                ],
+                "FORM":"TABLE"
+            }
+        }
+
+
+       whereArray = [];
+       whereArray = [
+       {"LT": {
+       "courses_avg": 97.2
+       }
+       },
+       {"GT": {
+              "courses_avg": 95.0
+              }
+              }
+       ]
+

@@ -1,0 +1,50 @@
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    border-style: solid;
+    padding: 10px;
+}
+
+.sm-container {
+    width: 65%;
+    margin: auto;
+    margin-top: 10px;
+    border-style: solid;
+    padding: 10px;
+}
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+body{
+    margin-top: 50px;
+    font-family: 'Trebuchet MS', serif;
+    line-height: 1.6;
+    /*background-image: url("http://slais-ischool.sites.olt.ubc.ca/files/2014/07/Aerials-Main-Mall_20130913__Hover-Collective-10-2.jpg");
+    background-color: #ffffff;
+    background-size:cover
+    */
+}
+
+/*
+.form-group {
+    float: left;
+}
+*/
+/*
+#roomAddForm {
+    float: left;
+    width: 50%;
+}
+#courseAddForm{
+    float: left;
+    width: 50%;
+}
+*/

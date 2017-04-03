@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InsightUBC</title>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+<div id = "header">
+    <h1 align = "center">InsightUBC</h1>
+</div>
+<div id ="tabs">
+    <ul align = center class = "tabs">
+        <li><a href="#tabs-course">Courses Explorer</a></li>
+        <li><a href="#tabs-rooms">Rooms Explorer</a></li>
+        <li><a href="#tabs-scheduling">Scheduling</a></li>
+        <li><a href="#tabs-extra">Extra</a></li>
+    </ul>
+    <div id="tabs-course">
+        <div id = "courses">
+            <div class = "sm-container">
+                <div class = "form-group">
+                    <h3> Filters</h3>
+                    <input type="radio" name="courseFilter" value="s" id="searchSection" checked><span>Search Sections</span>
+
+                    <input type="radio" name="courseFilter" value="c" id="searchCourses"><span>Search Courses</span>
+                    <br>
+                    <div id="sectionsSearch">
+                        <input type="checkbox" id ="sectionDepartment">
+                        Department
+                        <select id="sectionCourseDept">
+                            <option></option>
+                        </select>
+                        <br>
+                        <input type="checkbox" id ="sectionSize">
+                        Section Size
+                        <select id="operator">
+                            <option value="GT">></option>
+                            <option value="LT"><</option>
+                            <option value="EQ">=</option>
+                        </select>
+                        <input type="number" , id="sectionSizeInput" placeholder="Enter section size">
+                        <br>
+                        <input type="checkbox" id ="sectionInstructor">
+                        Instructor
+                        <input type="string" , id="sectionInstructorInput" placeholder="Enter instructor name">
+                        <br>
+                    </div>
+                    <div id="coursesSearch">
+                        <input type="checkbox" id ="department">
+                        Department
+                        <select id="courseDept">
+                            <option></option>
+                        </select>
+                        <br>
+                        <input type="checkbox" id ="courseNumber">
+                        Course Number
+                        <input type="string" , id="courseNumberInput" placeholder="Enter course number">
+                        <br>
+                        <input type="checkbox" id ="courseTitle">
+                        Course Title
+                        <input type="string" , id="courseTitleInput" placeholder="Enter course title">
+                        <br>
+                        Sort Options:
+                        <br>
+                        <form>
+                            <input type="checkbox" name="sort" id="fail"> The most failing students<br>
+                            <input type="checkbox" name="sort" id="pass"> The most passing students<br>
+                            <input type="checkbox" name="sort" id="average"> Average Grade<br>
+                        </form>
+                    </div>
+                    <br>
+                    <button class="button" id="btnSubmit">Submit</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabs-rooms">
+        <div id = "rooms">
+            <div class = "sm-container">
+                <div class = "form-group">
+                    <h3> Filters</h3>
+                    <input type="radio" name="roomSearchType" value="roomsAllBuildingRadio" id ="roomsAllBuilding">
+                    Search all rooms in building
+                    <input type="string" , id="roomsAllBuildingInput" placeholder="Enter building name">
+                    <br>
+                    <input type="radio" name="roomSearchType" value="roomsMeterBuildingRadio" id ="roomsMetersBuilding">
+                    Search all rooms within
+                    <input type="string" , id="roomsMeterInput" placeholder="Enter distance">
+                    meters from building
+                    <input type="string" , id="roomsMeterBuildingInput" placeholder="Enter building name">
+                    <br>
+                    <input type="radio" name="roomSearchType" value="roomsSizeRadio" id ="roomsSize">
+                    Search all rooms bigger than size
+                    <input type="string" , id="roomsSizeInput" placeholder="Enter size">
+                    <br>
+                    <input type="radio" name="roomSearchType" value="roomsSizeMetersRadio" id ="roomsSizeMeters">
+                    Search all rooms bigger than size
+                    <input type="string" , id="roomsSizeMetersInput" placeholder="Enter size">
+                    and within
+                    <input type="string" , id="roomsSizeMetersInput2" placeholder="Enter distance">
+                    meters from building
+                    <input type="string" , id="roomsSizeMeterBuildingInput" placeholder="Enter building name">
+                    <br>
+                    <input type="radio" name="roomSearchType" value="roomsTypeRadio" id ="roomsType">
+                    Search all rooms with type
+                    <select id="roomsTypeDropDown1">
+                        <option></option>
+                    </select>
+                    or furniture
+                    <select id="roomsFurnitureDropDown1">
+                        <option></option>
+                    </select>
+                    <br>
+                    <input type="radio" name="roomSearchType" value="roomsTypeMetersRadio" id ="roomsTypeMeters">
+                    Search all rooms with type
+                    <select id="roomsTypeDropDown2">
+                        <option></option>
+                    </select>
+                    or furniture
+                    <select id="roomsFurnitureDropDown2">
+                        <option></option>
+                    </select>
+                    and within
+                    <input type="string" , id="roomsTypeMetersInput" placeholder="Enter distance">
+                    meters from building
+                    <input type="string" , id="roomsTypeMeterBuildingInput" placeholder="Enter building name">
+                    <br>
+                    <br>
+                    <button class="button" id="btnSubmitRooms">Submit</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabs-scheduling">
+        <div id = "schedule">
+            <div class = "sm-container">
+                <div id = "courseAddForm">
+                    <button class="button" id="Reset" align="centre">Reset</button>
+                    <br>
+                    <h3>Add Courses</h3>
+                    <input type="radio" name="courseAddType" value="courseDeptOnly" id ="courseDeptOnly">
+                    Search all courses in department
+                    <select id="scheduleDepartmentDropdown">
+                        <option></option>
+                    </select>
+                    <br>
+                    <input type="radio" name="courseAddType" value="courseDeptAndID" id ="courseDeptAndID">
+                    Search all courses in department
+                    <select id="scheduleDepartmentDropdown2">
+                        <option></option>
+                    </select>
+                    Course Number
+                    <input type="string" , id="courseNumberInputScheduler" placeholder="Enter course number">
+                    <br>
+                    <button class="button" id="addCourses">Add Courses</button>
+                    <br>
+                    <table id="addCoursesResults" class="container">
+                        <h3>Added courses</h3>
+                    </table>
+                </div>
+                <div id = "roomAddForm" >
+                    <h3>Add Rooms</h3>
+                    <input type="radio" name="roomsAddType" value="roomsBuildingOnly" id ="roomsBuildingOnly">
+                    Search all rooms in building
+                    <select id="scheduleBuildingsDropdown">
+                        <option></option>
+                    </select>
+                    <br>
+                    <input type="radio" name="roomsAddType" value="roomsBuildingDistance" id ="roomsBuildingDistance">
+                    Search all rooms within
+                    <input type="string" , id="roomsDistanceInput" placeholder="Enter distance">
+                    meters from building
+                    <select id="scheduleBuildingsDropdown2">
+                        <option></option>
+                    </select>
+                    <br>
+                    <button class="button" id="addRooms">Add Rooms</button>
+                    <br>
+                    <table id="addRoomsResults" class="container">
+                        <h3>Added Rooms</h3>
+                    </table>
+                </div>
+                <br>
+                <button class="button" id="btnSchedule">Schedule Courses to Rooms!</button>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div id="tabs-extra">
+        <body>
+        <div class = "sm-container">
+
+            <div id="container">
+                <h3>Query</h3>
+                <textarea id='queryInput' rows="10"></textarea>
+                <br>
+                <button class="button" id="queryControl">Submit!</button>
+                <br>
+            </div>
+        </div>
+        </body>
+    </div>
+    <table id = "tblResults" class="container">
+        <h3 align = "center">Results</h3>
+        <!--This is where Results should get rendered in table form -->
+
+    </table>
+</div>
+</div>
+</body>
+</html>
